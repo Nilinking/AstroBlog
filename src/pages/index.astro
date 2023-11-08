@@ -1,19 +1,10 @@
 ---
----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="generator" content={Astro.generator} >
-	<title>Astro</title>
-</head>
-<body>
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting.jsx";
 
-<h1>My Astro site</h1>
-</body>
-</html>
+const pageTitle = "Home Page";
+---
+<BaseLayout pageTitle={pageTitle}>
+	<h2>This is my amazing subtitle</h2>
+	<Greeting client:load messages={["Hello", "Hi", "What's up?", "PENTAKILL", "42", "Life is meaningless without love", "Howdy", "Hey there", "Who ate my spaget?"]} />
+</BaseLayout>
